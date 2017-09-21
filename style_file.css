@@ -126,8 +126,10 @@ table{
 
 .gallery {
     margin: 20px;
+    margin-left: 20px;
     border: 1px solid #ccc;
     float: left;
+    position:auto; 
     width: 180px;
 }
 
