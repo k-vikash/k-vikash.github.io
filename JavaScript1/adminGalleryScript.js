@@ -60,10 +60,10 @@
           modal.style.display = "none";
         }
       //edit
+         var n=dta.replace('https://k-vikash.github.io/JavaScript1','');
      spanEdit.onclick=function(){
 
           modal.style.display= "none";
-          var n=dta.replace('file:///home/zemoso/javaScript/mywebsite/','');
           document.getElementById('url').value=n;
           for(var i=0;i<arr.length;i++){
               if(arr[i].url===n){
@@ -84,9 +84,8 @@
 
              for(var i=0; i<arr.length;i++){
 
-              console.log(dta + " " +arr[i].url );
-                    if(arr[i].url!=dta){
-                      console.log(i);
+             // console.log(dta + " " +arr[i].url );
+                    if(arr[i].url===n){
                        arr.splice((i+1),1);
                        alert("image successfully delete");
                        modal.style.display= "none";
