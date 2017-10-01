@@ -60,7 +60,7 @@
           modal.style.display = "none";
         }
       //edit
-         var n=dta.replace('https://k-vikash.github.io/JavaScript1','');
+         var n=dta.replace('https://k-vikash.github.io/JavaScript1/','');
      spanEdit.onclick=function(){
 
           modal.style.display= "none";
