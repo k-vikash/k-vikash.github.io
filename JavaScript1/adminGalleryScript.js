@@ -24,7 +24,6 @@
           return false;
         } 
         if(validatedate(nUdate)===false){
-          alert("invalid date!!");
           return false;
         }
          if(catchId=="Add Image"){
