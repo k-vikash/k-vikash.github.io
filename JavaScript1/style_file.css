@@ -160,6 +160,7 @@ table{
     float: left;
     position:auto; 
     width: 150px;
+    height:150px;
     cursor: pointer;
 }
 
