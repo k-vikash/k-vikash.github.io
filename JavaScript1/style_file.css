@@ -160,6 +160,7 @@ table{
     float: left;
     position:auto; 
     width: 150px;
+    cursor: pointer;
 }
 
 .gallery:hover {
