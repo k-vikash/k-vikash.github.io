@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Gallery</title>
+<link rel="stylesheet" type="text/css" href="style_file.css">
+<link rel="stylesheet" type="text/css" href="pop.css">
+<script src="jquery-3.2.1.js"></script>
+<script type="text/javascript" src="dcl.js"></script>
+<script type="text/javascript" src="calenderDatecheck.js"></script>
+<script type="text/javascript" src="adminGalleryScript.js"></script>
+<script type="text/javascript" src="gallery.json"></script>
+</head>
+<body onload="showtime();">
+<div id="wrapper-admin">
+    <form name="clock" onSubmit="0" runat="server">
+      <input class="clock_display" type="text" align="right"  name="face" size=10 disabled="disabled"; value="">
+    </form>
+    <h1><i>Admin Gallery</i></h1>
+    <div align="right">
+      <form  action="http://www.google.com/search" target="_blank" method="GET">
+        <input type="textbox" name="q">
+        <input type="submit" value="search" style="cursor:pointer;">
+      </form>
+    </div>
+    <div id=size class="sLink">
+       <table>
+        <tr>
+          <td><a class="link_page" href="index.html" >HOME</a></td> 
+          <td><a class="link_page" href="aboutme.html">ABOUT ME</a></td>
+          <td> <a class="link_page" href="gallery.html">GALLERY</a></td>
+          <td><a class="link_page2" href="cme.html">CONTACT ME</a></td>
+        </tr>
+       </table>
+    </div> 
+    <div id="image_file" style="width:100%"></div>
+    
+    <!-- pop the image -->
+    <div id="myModal" class="modal">
+        <span class="closeN">&times;</span>
+        <span class="button" type="edit" value="Edit Image" id="btn2"> Edit </span>
+        <div id='panel'></div>
+        <span class="delete">Delete</span>
+        <img class="modal-content" id="img01">
+ 
+    </div> 
+    <!-- loading image from json file -->
+    <script type="text/javascript">
+          myFunction(arr);
+          function myFunction(arr){
+              var out="";    
+              for (var i = 0; i<arr.length ; i++) {
+                  out += '<div class="gallery"> </br> <img class= "'+ arr[i].imgId +'" src="' + arr[i].url + '" onclick="imagePop(this)" >' + 
+                  arr[i].caption + '</div>';
+              }
+              document.getElementById("image_file").innerHTML=out;
+          }
+    </script>
+    <script type="text/javascript">
+      $(function() {
+          $(".button").click(function() {
+          $("#myform #valueFromMyButton").text($(this).val().trim());
+          $("#myform input[type=text]").val('');
+          $("#myform").show(500);
+      });
+
+          $("#closePopup").click(function() {
+          $("#valueFromMyModal").val($("#myform input[type=text]").val().trim());
+          $("#myform").hide(400);
+      });
+    });
+    </script>  
+    <input type="button" class="button" value="Add Image" id="btn1" onclick="catchTheValue(this)">
+    <div id="panel"></div>
+   
+    <div id="panel">
+    <div class="dialog" id="myform">
+    <button type="button" id="closePopup">Close</button>
+        <center><h3 id=valueFromMyButton></h3></center>
+        <form>
+             <label id="value">Image URL </label>
+             <input type="text" id="url">
+        </form>
+        <form>
+              <label id="value">Image Name </label>
+              <input type="text" id="name">
+        </form>
+        <form>
+              <label id="value">Information </label>
+              <input type="text" id="information">      
+        </form>
+        <form>
+              <label id="value" >Uploaded Date </label>
+              <input type="datet" id="uDate" value="dd/mm/yyyy">
+        <div align="center">
+              <input type="button" value="submit" onclick="addImagefunc()" id="btnOK">
+        </div>
+        </form>
+    </div>
+    </div>
+</div>
+</body>
+</html>

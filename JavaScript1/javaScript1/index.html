@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">        
+<html>
+<head>
+<title>HomePage</title>
+<link rel="stylesheet" type="text/css" href="style_file.css">
+<script type="text/javascript">
+      var image1=new Image()
+      image1.src="bg2.jpg"
+      var image2=new Image()
+      image2.src="bg3.jpg"
+      var image3=new Image()
+      image3.src="bg4.jpg"
+</script>
+
+<script type="text/javascript" src="dcl.js"></script>
+
+</head>
+<body onload="Dgclock();">
+    <div id="wrapper">
+        <form name="clock" onSubmit="0" runat="server">
+            <input class="clock_display type="text" align="right"  name="face" size=10 disabled="disabled"; value="">
+        </form>
+        <h1><i>Welcome to My HomePage</i></h1>
+        <div align="right">
+             <form  action="http://www.google.com/search" target="_blank" method="GET">
+                 <input type="textbox" name="search_engine">
+                 <input type="submit" value="search"style="cursor:pointer;">
+             </form>
+        </div>
+        <div id="size" class="sLink">
+            <table><tr>
+               <td><a class="link_page" href="index.html" >HOME</a></td> 
+               <td><a class="link_page" href="aboutme.html" >ABOUT ME</a></td>  
+               <td> <a class="link_page" href="gallery.html">GALLERY</a></td>
+               <td><a class="link_page2" href="cme.html">CONTACT ME</a></td></tr> 
+            </table>
+        </div>  
+        <div class="left-div">
+                <a href="bg2.jpg"> <img class="clg" src="bg2.jpg" href="bg2.jpg" name="slide" /></a>
+        </div>
+        <div class="right-div">   
+                  <p>  Hi, Myself Vikash Kumar, a software engineer at ZeMoSo Technologies. I have completed my graduation and postgraduation from Indian Institute of Technology Kanpur.
+                  .</br>I spend my school days in J.N.V, East Champaran in Bihar.</p>
+        </div>
+        <script>  
+            var step=1
+            function slideit()
+            {
+                  if (!document.images)
+                        return
+                  document.images.slide.src=eval("image"+step+".src")
+                  if (step<3)
+                        step++
+                  else
+                  step=1
+                  setTimeout("slideit()",5500)
+            }
+              slideit();
+        </script>
+        <div class='logo'>
+                <a class="fb_logo" href="https://www.facebook.com/vikash.anurag.1" target="_blank"> <img class="logo_class" src="fb.jpg"></a>
+                <a class="linkedinNQ" href="http://www.linkedin.com/nhome/?trk=" target="_blank"><img  class="logo_class" src="ln.png"></a>
+                <a class="linkedinNQ" href="http://www.quora.com/Vikash-Anurag" target="_blank"><img class="logo_class" src="q.png"></a>
+        </div>
+    </div>
+    <h5 class="copyright">Copyright@ Vikash Kumar.</h5>
+</body>
+</html>

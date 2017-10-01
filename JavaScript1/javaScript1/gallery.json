@@ -1,0 +1,64 @@
+
+var arr=([
+{
+	"imgId":"image01",
+	"url":"imgs/1.jpg",
+	"caption": "Random click",
+	"uploadDate": "12/02/2013"
+},
+{
+	"imgId":"image02",
+	"url":"imgs/3.jpg",
+	"caption": "TechFest",
+	"uploadDate": "12/05/2013"	
+},
+{
+	"imgId":"image03",
+	"url":"imgs/12.jpg",
+	"caption": "School Trip",
+	"uploadDate": "12/02/2014"	
+},
+{
+	"imgId":"image04",
+		"url":"imgs/5.jpg",
+	"caption": "Random click",
+	"uploadDate": "12/08/2013"	
+},
+{
+	"imgId":"image05",
+		"url":"imgs/6.jpg",
+	"caption": "TechFest",
+	"uploadDate": "12/10/2013"	
+},
+{
+	"imgId":"image06",
+	"url":"imgs/7.jpg",
+	"caption": "Random click",
+	"uploadDate": "12/02/2015"
+},
+{
+	"imgId":"image07",
+	"url":"imgs/8.jpg",
+	"caption": "Designed image",
+	"uploadDate": "12/08/2014"	
+},
+{
+	"imgId":"image09",
+		"url":"imgs/9.jpg",
+	"caption": "Random Click",
+	"uploadDate": "12/05/2014"		
+},
+{
+	"imgId":"image10",
+		"url":"imgs/10.jpg",
+	"caption": "Random click",
+	"uploadDate": "12/11/2014"		
+},
+{
+	"imgId":"image08",
+	"url":"imgs/11.jpg",
+	"caption": "TechFest",
+	"uploadDate": "12/08/2014"
+},
+]
+)

@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>My Gallery</title>
+<link rel="stylesheet" type="text/css" href="p.css">
+<script type="text/javascript" src="dcl.js"></script>
+<link rel="stylesheet" type="text/css" href="style_file.css">
+<link rel="stylesheet" type="text/css" href="pop.css">
+<script type="text/javascript" src="gallery.json"></script>
+</head>
+<body onload="Dgclock();">
+  <div id="wrapper">
+     <form name="clock" onSubmit="0" runat="server">
+       <input class="clock_display"type="text" align="right"  name="face" size=10 disabled="disabled"; value="" >
+     </form>
+    <h1><i>Gallery<i></h1>
+     
+    <div align="right">
+    <form  action="http://www.google.com/search" target="_blank" method="GET">
+    <input type="textbox" name="q">
+    <input type="submit" value="search"style="cursor:pointer;">
+    </form>
+    </div>
+    <div id="size2" class="sLink">
+       <table>
+        <tr>
+          <td><a class="link_page" href="index.html" >HOME</a></td> 
+          <td><a class="link_page" href="aboutme.html">ABOUT ME</a></td>
+          <td> <a class="link_page2" href="Admin gallery.html">ADMIN GALLERY </a></td>
+          <td><a class="link_page2" href="cme.html">CONTACT ME</a></td>
+        </tr>
+       </table>
+
+    </div> 
+
+    <div id="image_file" style="width:100%"></div>
+    <div id="myModal" class="modal">
+        <span class="closeN">&times;</span>
+        <img class="modal-content" id="img01">
+ 
+    </div>
+    <script type="text/javascript">
+      myFunction(arr);
+      function myFunction(arr){
+        var out="";       
+         
+       for (var i = 0; i<arr.length ; i++) {
+         //imgId= "img"+ i.toString;
+           out += '<div class="gallery"> </br> <img class= "'+ arr[i].imgId +'" src="' + arr[i].url + '" onclick="imagePop(this)" >' + 
+            arr[i].caption + '</div>';
+        }
+        document.getElementById("image_file").innerHTML=out;
+      }
+      function imagePop(element){
+        var dta= element.src;
+        var modal=document.getElementById('myModal');
+        var imgInd=document.getElementById('img01');
+        modal.style.display = "block";
+        imgInd.src = dta;
+        var spanClose = document.getElementsByClassName("closeN")[0];
+        spanClose.onclick = function() { 
+          modal.style.display = "none";
+        }
+  }
+    </script>
+
+</div>
+</div>
+</body>
+</html>
