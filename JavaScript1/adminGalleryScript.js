@@ -84,9 +84,9 @@
 
              for(var i=0; i<arr.length;i++){
 
-             // console.log(dta + " " +arr[i].url );
+             console.log(dta + " " +arr[i].url );
                     if(arr[i].url===n){
-                       arr.splice((i+1),1);
+                       arr.splice(i,1);
                        alert("image successfully delete");
                        modal.style.display= "none";
                        myFunction(arr);
