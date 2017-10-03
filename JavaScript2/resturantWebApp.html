@@ -48,7 +48,7 @@
 		
 		for(var i=0;i<itemData.length; i++){
 				
-					out+='<li> <a id='+ i +' href="#" draggable="true" ondragstart="drag(event)"> '+ itemData[i].name +'</br>' + itemData[i].cost +'</a></li>';
+					out+='<li> <a id='+ i +' href="#" draggable="true" ondragstart="drag(event)"> '+ itemData[i].name +'<br>' + itemData[i].cost +'</a></li>';
 		}
 		 document.getElementById('myUL').innerHTML=out;
 	}
