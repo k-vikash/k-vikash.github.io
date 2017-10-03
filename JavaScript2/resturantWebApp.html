@@ -1,0 +1,58 @@
+<html>
+<head>
+<title> Welcome to Dashboard
+	
+</title>
+<link rel="stylesheet" type="text/css" href="resturantStyle.css">
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript" src="resturantWebApp.js"></script>
+</head>
+<body bgcolor="#FF7F50">
+<center><h1><ul>Welcome to ZeMoSo Resturant</ul></h1></center>   
+<div id="partition">
+<div class="left-align">
+	Tables
+	<form>
+    <input class="search-menu" id ="listTable" type="text" name="search" onkeyup="searchDataTable()" placeholder="Search..">
+</form>
+<ul id="myULT"></ul>
+<div id="myModal" class="modal" style="align-self: center;">
+<div id="header"> </div>
+<table id="table-detail"></table>
+<hr>
+<span class ="bill-payment">Click to CLOSE the session!!!</span>
+<span class="closeN">&times;</span>  
+ 
+</div> 
+</div>
+
+
+<div class="middle">
+<hr class="vertical-line">
+</div>
+<div class="right-align">
+	Menu
+<form>
+<input id="menuList" class="search-menu" type="text" name="search" onkeyup="searchData();" placeholder="Search..">
+</form>
+<ul id="myUL"></ul>
+</div>
+</div>
+<script type="text/javascript">
+	createTable();
+	menuData(itemData);
+	function menuData(itemData){
+	
+		var out="";
+		
+		for(var i=0;i<itemData.length; i++){
+				
+					out+='<li> <a id='+ i +' href="#" draggable="true" ondragstart="drag(event)"> '+ itemData[i].name +'</br>' + itemData[i].cost +'</a></li>';
+		}
+		 document.getElementById('myUL').innerHTML=out;
+	}
+
+</script>
+
+</body>
+</html>

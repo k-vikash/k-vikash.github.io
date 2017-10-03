@@ -1,0 +1,238 @@
+
+#partition{
+	
+	margin: 20px;
+}
+
+.left-align{
+	      float:left;
+          width:350px;
+          height:550px;
+          font-size:28px;
+
+}
+.left-align:focus{
+	 width: 100%;
+}
+.middle{
+	      float:left;
+          height:550px;
+          font-size:28px;
+}
+.middle:focus{
+	 width: 100%;
+}
+.right-align{
+        margin-left:500px;
+        margin-top:150px;
+        margin-right:90px;
+        text-align: justify;
+        font-size:28px;
+        font-style: italic;
+        background: #FF7F50;
+}
+.search-menu{
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.search-menu:focus {
+    width: 100%;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+  margin-left: 10px;
+}
+#myULT li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: cadetblue;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+  margin-left: 10px;
+  margin-right: 100px;
+}
+#myULT {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#myULT li a:hover:not(.header) {
+  background-color: #eee;
+}
+#Table-div li a:hover:not(.header) {
+  background-color: #eee;
+}
+* {
+  box-sizing: border-box;
+}
+.button[type="edit-table"]{
+	margin-top: 10px;
+	height: 68px;
+	width: 260px;
+	font-size: 20px;
+	font-family: inherit;
+}
+#Total-table{
+	float: left;
+}
+.vertical-line{
+	width:1px;
+	height:1308px;
+}
+
+.dialog{
+  border:5px solid #666;
+  padding:10px;
+  height: 350px;
+  width: 500px;
+  top:161px;
+    left:300px;
+  background:white;
+  position:absolute;
+  display:none;
+}
+.dialog label{
+  display:inline-block;
+  color:#cecece;
+}
+input[type=text]{
+  border:1px solid #333;
+  display:inline-block;
+  margin:5px;
+  width: 250px;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 70px; /* Location of the box */
+    left: 0;
+    top: 0;
+    margin-left: 50px;
+    margin-top: 50px;
+    width: 50%; /* Full width */
+    height: 50%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(205, 250, 25); /* Fallback color */
+    background-color: rgb(205, 250, 25,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 200px;
+}
+
+/* Caption of Modal Image */
+
+/* Add Animation */
+.modal-content{    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+
+
+/* The Close Button */
+.closeN {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #020202;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.closeN:hover,
+.closeN:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+.delete{
+  position: absolute;
+    top: 15px;
+    left:35px;
+    color: #020202;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.delete:hover,
+.delete:focus {
+   color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+.button[type=edit]{
+  position: absolute;
+    top: 15px;
+    left:300px;
+    color: #020202;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.button[type=edit]:hover,
+.button[type=edit]:focus {
+   color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+#table-detail{
+  width: 100%;
+  font-size: 20px;
+}
+#header{
+  margin-left: 20px;
+}
+.bill-payment{
+  position: absolute;
+    left: 150px;
+    color: #020202;
+    font-size: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color:deepskyblue;
+}
+.bill-payment:hover,
+.bill-payment:focus {
+   color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
