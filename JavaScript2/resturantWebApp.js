@@ -28,7 +28,8 @@
 		function drop(ev) {
     		ev.preventDefault();
     		var data = ev.dataTransfer.getData("Text/Html");
-    	    var tb= ev.target.id;
+    	        var tb= ev.target.id;
+	       tb=parseInt(tb);
     		//to remove link part from data
     		var text = data.match(/<a[^\b>]+>(.+)[\<]\/a>/)[1];
     		text=text.split("<br>");
