@@ -1,12 +1,12 @@
 var data='';
-
+// export the data in CSV file formate and download on call of the function onload
 function exportToCsv(filename, rows) {
         var processRow = function (row) {
             var finalVal = '';
             var result='';
             for (var j = 0; j < row.length; j++) {
-            	result=row[j].trim();
-            	if (result.search(/("|,|\n)/g) >= 0 )
+            	result=row[j].trim(); // remove the whitespaces in the string
+            	if (result.search(/("|,|\n)/g) >= 0 )// s
                     result = '"' + result + '"';
                if(j!=0){
             	 	finalVal +=",";
@@ -21,7 +21,7 @@ function exportToCsv(filename, rows) {
         for (var i = 0; i < rows.length; i++) {
             csvFile += processRow(rows[i]);
         }
-        csvFile ="\ufeff" + csvFile;  //ufeff to read properly
+        csvFile ="\ufeff" + csvFile;  // \ufeff to read csv data string file properly
         var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;' });
         if (navigator.msSaveBlob) { // IE 10+
             navigator.msSaveBlob(blob, filename);
@@ -38,8 +38,9 @@ function exportToCsv(filename, rows) {
                 document.body.removeChild(link);
             }
         }
-    }   		
-function abc(){
+    }  
+// function which is generating the array of the data
+function extractData(){
 	data=document.getElementsByClassName('MsoPlainText');
 	var csv=[]; 
 
@@ -50,7 +51,7 @@ function abc(){
 	csv.push(obj);
 	while (i<data.length) {
 	  y= data[i].innerText;
-	 if(y.indexOf('DEPARTMENT OF')!==-1){
+	 if(y.indexOf('DEPARTMENT OF')!==-1){ //check for department name
 
 	 	     p= y.replace("------", "");
     		 for ( var k =(i+1);k<data.length;k++) {
@@ -62,12 +63,12 @@ function abc(){
     		 	}else if((data[k].innerText).indexOf('=====')!==-1 || (data[k].innerText).indexOf('----')!==-1 || (data[k].innerText).indexOf('CODE')!==-1 ){
     		 		continue;
     		 	}else if((data[k].innerText).indexOf('ACCOMMODATION CHARGES')!==-1){
-    		 		exportToCsv('export.csv', csv);	
+    		 		exportToCsv('export.csv', csv);	//eaport the data in csv format
  	
  	         			return;
     		 	}
     		 		arr[0]= (data[k].innerText).substring(0,8);
-    		 		if(arr[0].trim()===""){
+    		 		if(arr[0].trim()===""){ // to avoid blank space after department
     		 			continue;
     		 		}
     		 		arr[1]= (data[k].innerText).substring(8, 59);
@@ -80,7 +81,5 @@ function abc(){
     		
  	}
  	i++;
- 	}
-
- 	
+	}
 	}  
