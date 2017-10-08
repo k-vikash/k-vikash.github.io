@@ -4,13 +4,14 @@
 		var itemDataTable=[];
 		var counts={};
 		var dta;
+		var data;
 		//createTable();
 		function createTable(){
 			var nTable="";
 			var i;
 			for(i=0; i<3;i++){
 
-				 nTable+='<li> <a id='+ (i+1) +' href=# ondrop=drop(event) ondragover=allowDrop(event)  onclick=tableContent(event)> Table '+(i+1)+' <br> Rs:-'+ Rs[i] +' Item:- '+ itemNo[i] +'</a></li>';
+				 nTable+='<li> <a id='+ (i+1) +' href=# ondrop=drop(event) ondragover=allowDrop(event)  onclick=tableContent(event)> Table '+(i+1)+' <br> Rs:-'+ Rs[i] +' Item:- '+ itemNo[i] +'</a></li></br>';
 
 			}
 		    document.getElementById('myULT').innerHTML=nTable;
@@ -22,16 +23,16 @@
 
 		function drag(ev) {
 		
-    		ev.dataTransfer.setData('Text', ev.target.id);
+    		ev.dataTransfer.setData('Text/HTML', ev.target.innerHTML);
 		}
 
 		function drop(ev) {
     		ev.preventDefault();
-    		var data = ev.dataTransfer.getData("Text/Html");
+    		 text = ev.dataTransfer.getData("Text/HTML");
+    		 console.log(text);
     	        var tb= ev.target.id;
-	       tb=parseInt(tb);
-    		//to remove link part from data
-    		var text = data.match(/<a[^\b>]+>(.+)[\<]\/a>/)[1];
+	        tb=parseInt(tb);
+    		
     		text=text.split("<br>");
     		text[0]=text[0].substr(1);
     		Rs[tb-1]=parseInt(text[1])+ Rs[tb-1];
@@ -51,7 +52,7 @@
         	var modal=document.getElementById('myModal');
 
         	modal.style.display = "block";
-        	var ntitle=document.getElementById('header');
+        	var ntitle=document.getElementById('headerN');
         	ntitle.innerHTML= "Table "+ valu.name + "|" + "Order Detail";
         	
         	var spanClose = document.getElementsByClassName("closeN")[0];
@@ -76,13 +77,23 @@
       		}
       		var generatedBill = document.getElementsByClassName('bill-payment')[0];
       		generatedBill.onclick=function(){
-      			if(Rs[parseInt(dta)-1]===0){
-  						alert("Empty Table");
-  		 				modal.style.display = "none";
+      			if(generatedBill.innerHTML=='Pay'){
+      				ntitle.innerHTML= "Table "+ valu.name + "|" + "Order Detail";
+      				document.getElementById('table-detail').innerHTML="<tr><th>S.No.</th><th>Item</th><th>Price</th><th>Item Count</th><th>Delete</th></tr>";
+      				document.getElementsByClassName('bill-payment')[0].innerHTML='CLOSE the session!!!';
+      				modal.style.display = "none";
+      			}else if(Rs[parseInt(dta)-1]===0){
+      					document.getElementById('headerN').innerHTML="<u>Bill generated</u>";
+  						document.getElementById('table-detail').innerHTML='<center><p> Table is empty, please add items</p><center>';
+  		 				document.getElementsByClassName('bill-payment')[0].innerHTML='Pay';
   		 				itemDataTable[parseInt(dta)-1]='';
+  		 				//modal.style.display = "none";
   				}else{
-  						alert("bill generated, Please pay Rs= " +  Rs[parseInt(dta)-1] );
-  						modal.style.display = "none";
+  					document.getElementById('headerN').innerHTML="<u>Bill generated</u>";
+  						document.getElementById('table-detail').innerHTML='<center><p> Please pay Rs=  '+  Rs[parseInt(dta)-1] +', Thank you!</p><center>';
+  		 				document.getElementsByClassName('bill-payment')[0].innerHTML='Pay';
+  						//alert("bill generated,  );
+  						//modal.style.display = "none";
   						itemDataTable[parseInt(dta)-1]='';
   						itemNo[parseInt(dta)-1]=0;
      					Rs[parseInt(dta)-1]=0;
@@ -104,7 +115,7 @@
 								if(Object.keys(counts)[i]==itemData[j].name){								
 									itemNo[parseInt(dta)-1] =Object.values(counts)[i] + itemNo[parseInt(dta)-1];
 									Rs[parseInt(dta)-1]=(itemData[j].cost)*(Object.values(counts)[i]) +Rs[parseInt(dta)-1] ;
-									tablefull+="<tr><th><div id=s"+i+">" + (i+1) + "</div></th><th><div id=item"+i+">" + Object.keys(counts)[i] + "</div></th><th><div id=c"+i+">" + ((Object.values(counts)[i])*itemData[j].cost) +"</div></th><th><input type=number id="+ i +" min=1 value="+  Object.values(counts)[i]  + " onChange=valueChange(event)></input></th><th> <button id="+i+" onclick=deleteItem(event)>Delete </th></tr></button>";
+									tablefull+="<tr><th><div id=s"+i+">" + (i+1) + "</div></th><th><div id=item"+i+">" + Object.keys(counts)[i] + "</div></th><th><div id=c"+i+">" + ((Object.values(counts)[i])*itemData[j].cost) +"</div></th><th><input type=number id="+ i +" min=1 value="+  Object.values(counts)[i]  + " onChange=valueChange(event)></input></th><th> <button type=delete id="+i+" onclick=deleteItem(event)>Delete </th></tr></button>";
 									break;
 								}
 								
