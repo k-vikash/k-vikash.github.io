@@ -29,7 +29,7 @@
 		function drop(ev) {
     		ev.preventDefault();
     		 text = ev.dataTransfer.getData("Text/HTML");
-    		 console.log(text);
+    		// console.log(text);
     	        var tb= ev.target.id;
 	        tb=parseInt(tb);
     		
@@ -60,7 +60,10 @@
             var p;
            
         	spanClose.onclick = function() { 
-         		 modal.style.display = "none";
+         		    ntitle.innerHTML= "Table "+ valu.name + "|" + "Order Detail";
+      				document.getElementById('table-detail').innerHTML="<tr><th>S.No.</th><th>Item</th><th>Price</th><th>Item Count</th><th>Delete</th></tr>";
+      				document.getElementsByClassName('bill-payment')[0].innerHTML='CLOSE the session!!!';
+      				modal.style.display = "none";
         	}
 
         	if (typeof(itemDataTable[(parseInt(dta))-1]) == "undefined"){
@@ -115,7 +118,7 @@
 								if(Object.keys(counts)[i]==itemData[j].name){								
 									itemNo[parseInt(dta)-1] =Object.values(counts)[i] + itemNo[parseInt(dta)-1];
 									Rs[parseInt(dta)-1]=(itemData[j].cost)*(Object.values(counts)[i]) +Rs[parseInt(dta)-1] ;
-									tablefull+="<tr><th><div id=s"+i+">" + (i+1) + "</div></th><th><div id=item"+i+">" + Object.keys(counts)[i] + "</div></th><th><div id=c"+i+">" + ((Object.values(counts)[i])*itemData[j].cost) +"</div></th><th><input type=number id="+ i +" min=1 value="+  Object.values(counts)[i]  + " onChange=valueChange(event)></input></th><th> <button type=delete id="+i+" onclick=deleteItem(event)>Delete </th></tr></button>";
+									tablefull+="<tr><th><div id=s"+i+">" + (i+1) + "</div></th><th><div id=item"+i+">" + Object.keys(counts)[i] + "</div></th><th><div id=c"+i+">" + ((Object.values(counts)[i])*itemData[j].cost) +"</div></th><th><input type=number id="+ i +" min=1 value="+  Object.values(counts)[i]  + " onChange=valueChange(event)></input></th><th> <button class=delete id="+i+" onclick=deleteItem(event)>Delete </th></tr></button>";
 									break;
 								}
 								
