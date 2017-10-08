@@ -6,6 +6,11 @@ body{
   color: black;
   margin-left: 25px;
 }
+#total{
+  color: black;
+  font-size: 20px;
+  margin: 25px;
+}
 #header{
   margin-top: 20px;
   font-size: 36px;

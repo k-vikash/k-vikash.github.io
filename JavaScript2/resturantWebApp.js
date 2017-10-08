@@ -89,12 +89,14 @@
       					document.getElementById('headerN').innerHTML="<u>Bill generated</u>";
   						document.getElementById('table-detail').innerHTML='<center><p> Table is empty, please add items</p><center>';
   		 				document.getElementsByClassName('bill-payment')[0].innerHTML='Pay';
+  		 				document.getElementById('total').innerHTML='';
   		 				itemDataTable[parseInt(dta)-1]='';
   		 				//modal.style.display = "none";
   				}else{
   					document.getElementById('headerN').innerHTML="<u>Bill generated</u>";
   						document.getElementById('table-detail').innerHTML='<center><p> Please pay Rs=  '+  Rs[parseInt(dta)-1] +', Thank you!</p><center>';
   		 				document.getElementsByClassName('bill-payment')[0].innerHTML='Pay';
+  		 				document.getElementById('total').innerHTML='';
   						//alert("bill generated,  );
   						//modal.style.display = "none";
   						itemDataTable[parseInt(dta)-1]='';
@@ -123,9 +125,11 @@
 								}
 								
 							}
-							
+
 						}
+
 						detail.innerHTML=tablefull;
+						document.getElementById('total').innerHTML= 'Total Amount: Rs '+ Rs[parseInt(dta)-1];
 						
 		}
 		//update itemDataTable
